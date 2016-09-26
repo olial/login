@@ -1,0 +1,42 @@
+<html>
+<head>
+    <link rel="stylesheet" href="/static/css/styles.css" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+	<div class="row">
+	  	<div class="col-md-6">
+	  		<form action='/register' method='post'>
+		  		<h2>Registration</h2>
+		  		<h5>First Name: <input type="text" name="first_name"></h5>
+		  		<h5>Last Name: <input type="text" name="last_name"></h5>
+		  		<h5>Email: <input type="text" name="email"></h5>
+		  		<h5>Password: <input type="text" name="password"></h5>
+		  		<h5>Confirm Password: <input type="text" name="password_confirmation"></h5>
+		  		<button>Register</button>
+		  	</form>
+	  	</div>
+	</div>
+	<div class="warning">
+		{% with messages = get_flashed_messages() %}
+			{% for message in messages %}
+				{{ message }}
+			{% endfor %}
+		{% endwith %}
+	</div>
+	<br>
+	<br>
+	<div class="row">
+		<div class="col-md-6">
+		<form action="/login" method='post'>
+			<h5>Email: <input type="text" name="email"></h5>
+			<h5>Password: <input type="text" name="password"></h5>
+			<button>Login</button>
+		</form>
+		</div>
+	</div>
+</div>
+    
+  </body>
+</html>
